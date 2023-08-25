@@ -16,6 +16,11 @@ public class HitDetection : MonoBehaviour
     [SerializeField]
     private float upThrust = 20f;
 
+    [SerializeField]
+    private float rotationAmount;
+
+    private bool isHit = false;
+
     public UIManager manager;
 
     PolygonCollider2D polygonCollider;
@@ -24,6 +29,8 @@ public class HitDetection : MonoBehaviour
 
     private void Start()
     {
+        rotationAmount = Random.Range(1f, 2f);
+
         rigidbody = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         polygonCollider = GetComponent<PolygonCollider2D>();
@@ -34,6 +41,15 @@ public class HitDetection : MonoBehaviour
     }
 
     private void Update()
+    {
+        if ((!isHit))
+        {
+            transform.Rotate(0, 0, rotationAmount);
+        }
+        CheckBoundry();
+    }
+
+    private void CheckBoundry()
     {
         if (transform.position.y < -7f || transform.position.x < -10f || transform.position.y > 10f)
         {
@@ -47,11 +63,11 @@ public class HitDetection : MonoBehaviour
 
     IEnumerator FadeOutCoroutine()
     {
-
         float startTime = Time.time;
         float elapsedTime = 0f;
 
-        if(manager != null)
+        isHit = true;
+        if (manager != null)
         {
             manager.AddScore(10);
         }
