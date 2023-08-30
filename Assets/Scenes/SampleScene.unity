@@ -790,7 +790,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3e2b25076b0fe247ab9c8805fabbaca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 8938450128366258308, guid: ac31ff602ad19fc4885cbc8d8489e83d, type: 3}
+  target:
+  - {fileID: 8938450128366258308, guid: ac31ff602ad19fc4885cbc8d8489e83d, type: 3}
+  - {fileID: 5230878782706108506, guid: 7cfebb03457b718459f76da083c2901c, type: 3}
   manager: {fileID: 182353440}
   spawnInterval: 2
   minimumSpawnInterval: 0.6
@@ -868,7 +870,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3e621f881a3e3374d81db8d97c10024c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a61dd275f4af90c46b4c7b05b2076806, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -888,8 +890,8 @@ Transform:
   m_GameObject: {fileID: 1393226011}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.11949999, y: -0.00009999999, z: 0}
-  m_LocalScale: {x: 3.7652152, y: 2.824921, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 8.8, y: 8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}

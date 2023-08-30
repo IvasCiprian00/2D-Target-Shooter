@@ -53,7 +53,7 @@ public class HitDetection : MonoBehaviour
     {
         if (transform.position.y < -7f || transform.position.x < -10f || transform.position.y > 10f)
         {
-            if (manager != null)
+            if (manager != null && gameObject.tag == "Enemy")
             {
                 manager.RemoveLife(1);
             }
@@ -70,6 +70,10 @@ public class HitDetection : MonoBehaviour
         if (manager != null)
         {
             manager.AddScore(10);
+        }
+        if(gameObject.name == "Heal(Clone)")
+        {
+            manager.RemoveLife(-1);
         }
         polygonCollider.enabled = false;
         rigidbody.isKinematic = false;

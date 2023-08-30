@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject target;
+    public GameObject[] target;
 
     [SerializeField]
     private UIManager manager;
@@ -48,6 +48,7 @@ public class GameManager : MonoBehaviour
         while (!isGameOver)
         {
             float horizontalPosition = Random.Range(-9f, 9f);
+            int i = Random.Range(0, 20);
 
             if(timer > 2f && spawnInterval >= minimumSpawnInterval)
             {
@@ -55,8 +56,14 @@ public class GameManager : MonoBehaviour
                 timer -= 2f;
             }
             Vector3 position = new Vector3(horizontalPosition, -6f, -1f);
-            Instantiate(target, position, Quaternion.identity);
-
+            if(i >= 10)
+            {
+                Instantiate(target[1], position, Quaternion.identity);
+            }
+            else
+            {
+                Instantiate(target[0], position, Quaternion.identity);
+            }
             yield return new WaitForSeconds(spawnInterval);
         }
     }
