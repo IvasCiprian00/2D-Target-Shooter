@@ -69,6 +69,16 @@ public class UIManager : MonoBehaviour
 
     public void RemoveLife(int damage)
     {
-        currentLives -= damage;
+        if(damage < 0)
+        {
+            if(currentLives != 3)
+            {
+                currentLives -= damage;
+            }
+        }
+        else
+        {
+            currentLives -= damage;
+        }
     }
 }
